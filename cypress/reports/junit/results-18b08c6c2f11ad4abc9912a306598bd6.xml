@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.6370" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-12-05T21:47:31" tests="0" file="cypress/integration/api-tests/firstTest.ts" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="[Custom Test Suite]" timestamp="2021-12-05T21:47:31" tests="1" time="2.6270" failures="0">
+    <testcase name="[Custom Test Suite] Verify an existing product in GOG" time="2.6000" classname="Verify an existing product in GOG">
+    </testcase>
+  </testsuite>
+</testsuites>

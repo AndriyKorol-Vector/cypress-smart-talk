@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.5090" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-12-05T21:46:29" tests="0" file="cypress/integration/2-advanced-examples/location.spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Location" timestamp="2021-12-05T21:46:29" tests="3" time="1.4980" failures="0">
+    <testcase name="Location cy.hash() - get the current URL hash" time="0.2660" classname="cy.hash() - get the current URL hash">
+    </testcase>
+    <testcase name="Location cy.location() - get window.location" time="0.1530" classname="cy.location() - get window.location">
+    </testcase>
+    <testcase name="Location cy.url() - get the current URL" time="0.1330" classname="cy.url() - get the current URL">
+    </testcase>
+  </testsuite>
+</testsuites>

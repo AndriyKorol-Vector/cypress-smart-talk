@@ -1,0 +1,29 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports":true,
+    "baseUrl": "./",
+    "allowJs": true,
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es5",
+    "module": "es2020",
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "types": ["cypress", "cypress-file-upload"],
+    "strict": true,
+  },
+  "include": ["**/*.ts", "cypress/*/*.ts", "../../node_modules/cypress","cypress/integration/auth/login.spec.ts", "cypress/integration/auth/apiLogin.spec.js", "cypress/integration/auth/auth0.spec.js", "cypress/integration/auth/apiLogin.spec.js", "cypress/pageObjects/login.page.js", "cypress/support/auth.js"],
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+  }
+}
