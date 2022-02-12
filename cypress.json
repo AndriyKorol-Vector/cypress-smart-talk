@@ -1,7 +1,7 @@
 {
     "chromeWebSecurity": false,
     "defaultCommandTimeout": 15000,
-    "baseUrl": "https://www.gog.com",    
+    "baseUrl": "https://www.gog.com/games",    
     "e2e": {
       "defaultCommandTimeout": 10000
     },

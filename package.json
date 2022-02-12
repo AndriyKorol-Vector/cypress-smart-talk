@@ -1,7 +1,7 @@
 {
   "name": "cypress-smart-talk",
   "version": "0.0.0",
-  "scripts":{
+  "scripts": {
     "test": "cypress run"
   },
   "private": true,
@@ -38,7 +38,7 @@
     "@types/mochawesome": "^6.2.1",
     "@types/node": "^12.20.16",
     "codelyzer": "^6.0.0",
-    "cypress": "^9.1.0",
+    "cypress": "^9.4.1",
     "cypress-file-upload": "^5.0.6",
     "cypress-localstorage-commands": "^1.4.4",
     "cypress-mochawesome-reporter": "^2.3.0",
