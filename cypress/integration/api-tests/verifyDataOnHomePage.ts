@@ -26,19 +26,19 @@ describe('[Custom Test Suite]', () => {
     })      
     .then(result => {
       // [Accert]
-      expect(result.status).to.eq(200);        
+      expect(result.status, 'respoce status').to.eq(200);        
 
       let products = result.body.products;
 
       // [Accert]     
-      expect(products.length).to.not.eq(0); 
+      expect(products.length, 'products.length').to.not.eq(0); 
         
       let expectedProduct = products.find((element: any) => {
           return element.title.includes(productName) 
         }); 
 
       // [Accert]      
-      expect(expectedProduct.title).contain(productName);             
+      expect(expectedProduct.title, 'product title').contain(productName);             
     });     
   });  
   
@@ -54,30 +54,30 @@ describe('[Custom Test Suite]', () => {
     })      
     .then(result => {
       // [Accert]
-      expect(result.status).to.eq(200);        
+      expect(result.status, 'respoce status').to.eq(200);        
 
-      let groups = result.body;
-      let expectedObject:any;
+      let menuItems = result.body;
+      let expectedObjectOfMenuItem:any;
 
         
-      expect(groups.length).to.not.eq(0);
+      expect(menuItems.length, 'menuItems.length').to.not.eq(0);
 
-      for (const key in groups) {
+      for (const key in menuItems) {
         if( key === 'bestsellers'){
-          expectedObject = groups[key];
+          expectedObjectOfMenuItem = menuItems[key];
           break;
         };        
       }; 
 
-      expect(expectedObject.products.length).to.not.eq(0);
+      expect(expectedObjectOfMenuItem.products.length, 'expectedObjectOfMenuItem.products.length').to.not.eq(0);
 
-      let products = expectedObject.products
+      let products = expectedObjectOfMenuItem.products
       let expectedProduct = products.find((element: any) => {
         return element.title.includes(productName); 
       }); 
 
          
-      expect(expectedProduct.title).contain(productName);              
+      expect(expectedProduct.title, 'product title').contain(productName);              
     });     
   }); 
 });
