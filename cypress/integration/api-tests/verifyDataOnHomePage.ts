@@ -2,7 +2,6 @@
 
 import { GeneralUrls } from "cypress/enums/urls";
 import { Catalog, Navigation } from "cypress/support/controllers";
-import { entries } from "cypress/types/lodash";
 
 const catalog = new Catalog();
 const navigation = new Navigation();
@@ -17,6 +16,8 @@ describe('[Custom Test Suite]', () => {
   it('Verify an existing product in list of all products', () => {    
     // [Arrange]
     let productName = 'Kenshi';
+    let products: [];
+    let expectedProduct: any;
 
     //[Act]
     cy.request({
@@ -28,12 +29,12 @@ describe('[Custom Test Suite]', () => {
       // [Accert]
       expect(result.status, 'respoce status').to.eq(200);        
 
-      let products = result.body.products;
+      products = result.body.products;
 
       // [Accert]     
       expect(products.length, 'products.length').to.not.eq(0); 
         
-      let expectedProduct = products.find((element: any) => {
+      expectedProduct = products.find((element: any) => {
           return element.title.includes(productName) 
         }); 
 
@@ -45,6 +46,10 @@ describe('[Custom Test Suite]', () => {
   it('Verify an existing product in the menu', () => {    
     // [Arrange]
     let productName = 'Kenshi';
+    let menuItems:any[];
+    let expectedObjectOfMenuItem:any;
+    let products:any[];
+    let expectedProduct:any;
 
     //[Act]
     cy.request({
@@ -56,9 +61,7 @@ describe('[Custom Test Suite]', () => {
       // [Accert]
       expect(result.status, 'respoce status').to.eq(200);        
 
-      let menuItems = result.body;
-      let expectedObjectOfMenuItem:any;
-
+      menuItems = result.body;
         
       expect(menuItems.length, 'menuItems.length').to.not.eq(0);
 
@@ -71,11 +74,10 @@ describe('[Custom Test Suite]', () => {
 
       expect(expectedObjectOfMenuItem.products.length, 'expectedObjectOfMenuItem.products.length').to.not.eq(0);
 
-      let products = expectedObjectOfMenuItem.products
-      let expectedProduct = products.find((element: any) => {
+      products = expectedObjectOfMenuItem.products;
+      expectedProduct = products.find((element: any) => {
         return element.title.includes(productName); 
       }); 
-
          
       expect(expectedProduct.title, 'product title').contain(productName);              
     });     
