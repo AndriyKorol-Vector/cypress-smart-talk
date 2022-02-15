@@ -13,7 +13,8 @@ describe('[Custom Test Suite]', () => {
     cy.visit('/');      
   })
 
-  it('Verify an existing product in list of all products', () => {    
+  it('Verify an existing product in list of all products', () => {  
+
     // [Arrange]
     let productName = 'Kenshi';
     let products: [];
@@ -38,16 +39,20 @@ describe('[Custom Test Suite]', () => {
         }); 
           
       expect(expectedProduct.title, 'product title').contain(productName);             
-    });     
+    });
+    
+    console.log('hello');
   });  
   
-  it('Verify an existing product in the menu', () => {    
+  it('Verify an existing product in the menu', () => {  
+
     // [Arrange]
+    let manuGroupName: string = 'bestsellers';
     let productName = 'Kenshi';
     let menuItems:any[];
     let expectedObjectOfMenuItem:any;
     let products:any[];
-    let expectedProduct:any;
+    let expectedProduct:any;    
 
     //[Act]
     cy.request({
@@ -61,10 +66,10 @@ describe('[Custom Test Suite]', () => {
 
       menuItems = result.body;
         
-      expect(menuItems.length, 'menuItems.length').to.not.eq(0);
+      expect(Object.keys(menuItems).length, 'menuItems.length').to.not.eq(0);
 
       for (const key in menuItems) {
-        if( key === 'bestsellers'){
+        if( key === manuGroupName){
           expectedObjectOfMenuItem = menuItems[key];
           break;
         };        
