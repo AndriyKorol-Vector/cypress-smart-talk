@@ -30,15 +30,13 @@ describe('[Custom Test Suite]', () => {
       expect(result.status, 'respoce status').to.eq(200);        
 
       products = result.body.products;
-
-      // [Accert]     
+        
       expect(products.length, 'products.length').to.not.eq(0); 
         
       expectedProduct = products.find((element: any) => {
           return element.title.includes(productName) 
         }); 
-
-      // [Accert]      
+          
       expect(expectedProduct.title, 'product title').contain(productName);             
     });     
   });  
