@@ -7,5 +7,5 @@ export class HomePage {
 };
 
 export class Catalog {
-    readonly catalogAll = "/v1/catalog?limit=48&order=desc%3Atrending&productType=in%3Agame%2Cpack&page=1&countryCode=UA&locale=en_US&currencyCode=USD";
+    readonly catalogPage1 = "/v1/catalog?limit=48&order=desc%3Atrending&productType=in%3Agame%2Cpack&page=1&countryCode=UA&locale=en_US&currencyCode=USD";
 };

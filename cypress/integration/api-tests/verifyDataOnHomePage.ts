@@ -3,7 +3,7 @@
 import { GeneralUrls } from "cypress/enums/urls";
 import { Catalog, Navigation } from "cypress/support/controllers";
 
-const catalog = new Catalog();
+const productCatalog = new Catalog();
 const navigation = new Navigation();
 
 describe('[Custom Test Suite]', () => {
@@ -13,7 +13,7 @@ describe('[Custom Test Suite]', () => {
     cy.visit('/');      
   })
 
-  it('Verify an existing product in list of all products', () => {  
+  it('Verify an existing product in list of all products on the first page', () => {  
 
     // [Arrange]
     let productName = 'Kenshi';
@@ -23,7 +23,7 @@ describe('[Custom Test Suite]', () => {
     //[Act]
     cy.request({
       method:'GET', 
-      url: GeneralUrls.catalog + catalog.catalogAll, 
+      url: GeneralUrls.catalog + productCatalog.catalogPage1, 
       failOnStatusCode: false
     })      
     .then(result => {
@@ -40,8 +40,6 @@ describe('[Custom Test Suite]', () => {
           
       expect(expectedProduct.title, 'product title').contain(productName);             
     });
-    
-    console.log('hello');
   });  
   
   it('Verify an existing product in the menu', () => {  
